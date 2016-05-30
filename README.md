@@ -35,3 +35,5 @@ scraping_threads.py
 两个类ThreadUrl来读取queue中的表单数据然后从站点爬取数据写入到out_queue中
 DatamineThread读取out_queue中的数据，并处理数据，得到我们需要的数据insert到final_data中。
 
+
+此项目，代码写的比较急主要以实现需求为主，代码风格很不规范，后面有时间再规整规整吧
