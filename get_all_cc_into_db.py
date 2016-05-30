@@ -101,12 +101,17 @@ str_save(city_country,'city_country.txt')
 
 
 
+####在mysql中执行，建表存储所有市区组合，导入数据
+#create table cc1( id int not null auto_increment,fromcity varchar(50),
+#fromcountry varchar(50),tocity varchar(50),tocountry varchar(50),primary key(id))
+#engine=innodb charset=utf8;
+
+#load data infile '/home/yang/yang/myscrapy/test/version/data.txt' into table cc;
 
 
 
-
-###get all the combination of city_country_to_city_country  3000*3000  into a txt file
-# (len(_all))=3000*3000
+###get all the combination of city_country_to_city_country  3472*3472  into a txt file
+# (len(_all))=3472*3472
 #_all=[]
 def get_all_combination():
 	_all=[]
@@ -136,24 +141,9 @@ list_save(_all,'_all.txt')
 
 
 
-
-
-def read_file_to_list(filename):
-	mylist=[]
-	l=[]
-	with open(filename,'r') as fp:
-		for line in fp.readlines():
-			
-			mylist.append(line.split(','))
-
-	return mylist
-
-#'utf-8' list
-#mylist=read_file_to_list('_all.txt')
-
-
-
-##### then load _all list into Mysql!!
+##### then load _all list into Mysql!!建表final_data用来存储最终的数据
+#create table final_data
+#( id int not null auto_increment,fromcity varchar(50),fromcountry varchar(50),tocity varchar(50),tocountry varchar(50),deliveryTime char(3),min_price float,heavy_good float,light_good float,primary key(id))engine=innodb charset=utf8;
 
 
 
