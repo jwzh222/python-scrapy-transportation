@@ -130,7 +130,14 @@ def list_save(_all,filename):
 list_save(_all,'_all.txt')
 
 
-##### then load _all list into Mysql!!建表final_data用来存储最终的数据
-#create table final_data
-#( id int not null auto_increment,fromcity varchar(50),fromcountry varchar(50),tocity varchar(50),tocountry varchar(50),deliveryTime char(3),min_price float,heavy_good float,light_good float,primary key(id))engine=innodb charset=utf8;
+##### then load _all list into Mysql!!建表cc存储所有的city_country组合
+#create table cc( id int not null auto_increment,fromcity varchar(50),fromcountry varchar(50),
+#tocity varchar(50),tocountry varchar(50),primary key(id))engine=innodb charset=utf8;
+
+#sed 's/,/\t/g'  _all.txt>all_output.txt
+
+#load data infile '/var/lib/mysql-files/all_output.txt' into table cc(fromcity,fromcountry,tocity,tocountry);
+
+
+
 
